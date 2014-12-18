@@ -1,7 +1,10 @@
 class SignupMailer
+  attr_reader :subject
+
   def initialize(account:, user:)
     @account = account
     @user = user
+    @subject = "Your new #{@account.name} account"
   end
 
   def self.signup(account:, user:)
